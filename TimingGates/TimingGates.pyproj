@@ -21,7 +21,21 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FTP.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebServer.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TimingGates.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\HTML.html" />
+    <Content Include="templates\Name.html" />
+    <Content Include="templates\NamePost.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

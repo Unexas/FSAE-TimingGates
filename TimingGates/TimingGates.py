@@ -1,4 +1,4 @@
-
+import WebServer
 import RPi.GPIO as GPIO
 import time
 
@@ -42,7 +42,7 @@ while True:
 				if(GPIO.input(start_pin) == False):
 					start = time.time()
 					print ("first gate triggered")
-					gate1trigger = True;
+					gate1trigger = True
 
 					if(GPIO.input(reset_pin == True)):
 						counter = True
@@ -57,6 +57,3 @@ while True:
 					time.sleep(15)
 					gate2trigger = True
 					counter = True
-
-
-					
