@@ -1,13 +1,33 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>Timing Gates</title>
+    <title>TimingGates</title>
 </head>
 <body>
-   {% for time in times%}
-   <p> {{time.person}} with time a of {{time.time}}</p>
-   {%endfor%}
+    <h4>Last Time</h4>
+    <p>{{time.driver}} with time a of {{time.time}}</p>
+    <a href="FTP://localhost:5000/">Download times</a>
+    <h3>Current Driver - {{driver}}</h3>
+    <style>
+        textarea {
+            width: 20%;
+            height: 16px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+        }
+    </style>
+    <form method="POST">
+        <textarea name="textbox"></textarea>
+        <button type="submit" name="submit">Submit</button>
+    </form>
+    <h4>Times for today</h4>
+    {% for time in times%}
+    <p> {{time.driver}} with time a of {{time.time}}</p>
+    {%endfor%}
 </body>
 </html>

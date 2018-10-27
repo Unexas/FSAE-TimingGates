@@ -12,8 +12,13 @@ GPIO.setup(start_pin, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(stop_pin, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(reset_pin, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
-counter = True
+#Date needs to == the date from the clock on board
+#or we can just append on one file constantly and add the date in the file
 
+counter = True
+f = open(Date + ".txt", "x")
+f.write("Driver,Time")
+times= []
 while True:
 	while (counter == True):
 		if(GPIO.input(start_pin) == True):
@@ -49,11 +54,16 @@ while True:
 						print("gates have been reset")
 						time.sleep(1)
 			while(gate1trigger == True and gate2trigger == False):
-				if(GPIO.input(stop_pin) == False):
-					stop = time.time()
-					print ("second gate triggered")
-					t = stop - start
-					print ("Time: %.3fs" % (t))
-					time.sleep(15)
-					gate2trigger = True
-					counter = True
+				if (GPIO.input(stop_pin) == False):
+				    stop = time.time()
+				    print("second gate triggered")
+				    t = stop - start
+				    times.append({
+				    'driver': f"{t}",
+				    'time': f"{t}"
+				    })
+				    f.write(f"{WebServer.driver},{t}")
+				    print("Time: %.3fs" % (t))
+				    time.sleep(15)
+				    gate2trigger = True
+				    counter = True

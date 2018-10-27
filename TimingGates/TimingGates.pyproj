@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="FTP.py">
+    <Compile Include="TestData.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WebServer.py">
@@ -31,8 +31,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="templates\HTML.html" />
-    <Content Include="templates\Name.html" />
-    <Content Include="templates\NamePost.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="templates\" />
