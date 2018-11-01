@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
-from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+
 #RPi.GPIO cannot be installed on windows so i am using test data file to test pulling data from other files. Will need to be put back to TimingGates to work.
-import TestData as TimingGates
+import tigerracing as TimingGates
 
 app = Flask(__name__)
 
